@@ -13,12 +13,8 @@ CMAKE_POLICY(SET CMP0091 NEW)
 
 # ---[ Project and semantic versioning.
 PROJECT(XNNPACK C CXX ASM)
-
-SET(CMAKE_C_STANDARD 99)
-SET(CMAKE_C_EXTENSIONS NO)
-SET(CMAKE_CXX_STANDARD 11)
-SET(CMAKE_CXX_STANDARD_REQUIRED YES)
-SET(CMAKE_CXX_EXTENSIONS NO)
+include(conanbuildinfo.cmake)
+conan_basic_setup(TARGETS)
 
 # ---[ Options.
 SET(XNNPACK_LIBRARY_TYPE "default" CACHE STRING "Type of library (shared, static, or default) to build")
